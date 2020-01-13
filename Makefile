@@ -1,5 +1,5 @@
 EXTRA_CFLAGS += $(USER_EXTRA_CFLAGS) -fno-pie
-EXTRA_CFLAGS += -O1
+EXTRA_CFLAGS += -O3 -mcpu=native
 EXTRA_CFLAGS += -Wno-unused-variable
 EXTRA_CFLAGS += -Wno-unused-value
 EXTRA_CFLAGS += -Wno-unused-label
@@ -27,9 +27,9 @@ EXTRA_CFLAGS += -I$(src)/include
 EXTRA_LDFLAGS += --strip-debug
 
 ########################## WIFI IC ############################
-CONFIG_RTL8812A = y
+CONFIG_RTL8812A = n
 CONFIG_RTL8821A = y
-CONFIG_RTL8814A = y
+CONFIG_RTL8814A = n
 ######################### Interface ###########################
 CONFIG_USB_HCI = y
 ########################## Features ###########################
@@ -54,7 +54,7 @@ CONFIG_RTW_ADAPTIVITY_EN = disable
 CONFIG_RTW_ADAPTIVITY_MODE = normal
 CONFIG_SIGNAL_SCALE_MAPPING = n
 CONFIG_80211W = y
-CONFIG_REDUCE_TX_CPU_LOADING = n
+CONFIG_REDUCE_TX_CPU_LOADING = y
 CONFIG_BR_EXT = y
 CONFIG_TDLS = n
 CONFIG_WIFI_MONITOR = y
@@ -95,9 +95,9 @@ CONFIG_RTW_SDIO_PM_KEEP_POWER = y
 ###################### MP HW TX MODE FOR VHT #######################
 CONFIG_MP_VHT_HW_TX_MODE = n
 ###################### Platform Related #######################
-CONFIG_PLATFORM_I386_PC = y
+CONFIG_PLATFORM_I386_PC = n
 CONFIG_PLATFORM_ARM_RPI = n
-CONFIG_PLATFORM_ARM64_RPI = n
+CONFIG_PLATFORM_ARM64_RPI = y
 CONFIG_PLATFORM_ARM_JET_NANO = n
 CONFIG_PLATFORM_ANDROID_X86 = n
 CONFIG_PLATFORM_ANDROID_INTEL_X86 = n
